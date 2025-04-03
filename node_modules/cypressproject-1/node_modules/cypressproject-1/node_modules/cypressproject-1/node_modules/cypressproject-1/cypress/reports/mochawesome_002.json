@@ -1,0 +1,90 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-27T18:38:19.718Z",
+    "end": "2025-03-27T18:38:24.840Z",
+    "duration": 5122,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a55ddf83-feaa-4f2a-98cf-9d51b53939a7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test1.cy.js",
+      "file": "cypress\\e2e\\test1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Google Search",
+          "fullTitle": "Google Search",
+          "timedOut": null,
+          "duration": 3389,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "// \"=>\" same as \"function\"\ncy.visit('https://google.com/');\ncy.get('#APjFqb').type('Automation Step by Step{enter}');\n// cy.contains('Google 搜尋').click()",
+          "err": {
+            "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > solveSimpleChallenge is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+            "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > solveSimpleChallenge is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at onload (https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DAutomation%2BStep%2Bby%2BStep%26sca_esv%3D466a80cf504a0fa5%26source%3Dhp%26ei%3DHZvlZ--WHa3O1e8PlqLuYA%26iflsig%3DACkRmUkAAAAAZ-WpLZaH3qSqCFdE9SJK0WgxzMOLUh4T%26ved%3D0ahUKEwivmfqQ9KqMAxUtZ_UHHRaRGwwQ4dUDCA4%26uact%3D5%26oq%3DAutomation%2BStep%2Bby%2BStep%26gs_lp%3DEgdnd3Mtd2l6IhdBdXRvbWF0aW9uIFN0ZXAgYnkgU3RlcDIFEAAYgAQyBBAAGB4yBBAAGB4yBBAAGB4yBBAAGB4yBBAAGB4yBBAAGB4yBBAAGB4yBBAAGB4yBBAAGB5I3wRQAFjRBHAAeACQAQCYAYUBoAGiC6oBBDE3LjO4AQPIAQD4AQGYAhSgAoYMwgILEAAYgAQYsQMYgwHCAgUQLhiABMICCxAuGIAEGNEDGMcBwgIOEAAYgAQYsQMYgwEYigXCAggQABiABBixA8ICDhAuGIAEGLEDGNEDGMcBwgIREC4YgAQYsQMYgwEYxwEYrwHCAgsQLhiABBjHARivAZgDAJIHBDE3LjOgB5tosgcEMTcuM7gHhgw%26sclient%3Dgws-wiz%26sei%3DH5vlZ6W5EOTCvr0Pq7CxsQY&q=EgQNSyrYGJ-2lr8GIjCg5BQTj2OmOHEz1sl6Wsh0rC0K-euvDEQxd0l_Ut36SyUVKivlHUP3DGE6nh_ON5QyAnJSWgFD:4:316)",
+            "diff": null
+          },
+          "uuid": "f8b5d816-ea13-429a-80f0-6dc0d9070818",
+          "parentUUID": "a55ddf83-feaa-4f2a-98cf-9d51b53939a7",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "f8b5d816-ea13-429a-80f0-6dc0d9070818"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 3389,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

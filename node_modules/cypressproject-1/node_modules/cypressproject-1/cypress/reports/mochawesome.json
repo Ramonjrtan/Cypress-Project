@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-27T18:37:19.714Z",
+    "end": "2025-03-27T18:38:12.737Z",
+    "duration": 53023,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5cc5c182-8ff9-4cfa-90dc-64307793f76d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\D1_Test.cy.js",
+      "file": "cypress\\e2e\\D1_Test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fed4f6cd-34d9-4042-aa4a-d8aaf1b196c3",
+          "title": "Add PO Scope Details with Competencies Off",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add PO scope details with competencies off",
+              "fullTitle": "Add PO Scope Details with Competencies Off should add PO scope details with competencies off",
+              "timedOut": null,
+              "duration": 51161,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\n// Step 1: Perform login\n(0, _LoginGroups.login)(Cypress.env('email'), Cypress.env('password'));\ncy.log('✅ Successfully logged in');\n//Wait until Task Dashboard load\ncy.get(\"div.header-wrapper h1\", {\n  timeout: 60000\n}).should(\"be.visible\").and(\"contain\", \"Task Dashboard\");\n// Step 2: Navigate to contract\n(0, _ContractGroups.navigate_contract)();\ncy.log('✅ Navigated to contract');\n// // Step 3: Add a new ticket\n// add_ticket();\n// cy.log('✅ Ticket added');\n// Step 4: Edit the ticket\n(0, _EditTicketGroups.edit_ticket)();\ncy.log('✅ Ticket edited');\n// // Step 5: Add site\n// add_site();\n// cy.log('✅ Site added');\n// // Step 6: Add activity\n// add_activity();\n// cy.log('✅ Activity added');\n// // Step 7: Add schedule\n// add_schedule();\n// cy.log('✅ Schedule added');\n// Step 8: Click on Buy tab\ncy.get('.mat-icon').contains('shopping_cart').should('be.visible').click();\n// Step 9: Wait until the page loads completely\ncy.contains('app-legacy-status-label', 'Staged', {\n  timeout: 10000\n}).should('be.visible');\n// Step 10: Click on Edit PO button\ncy.get('tbody tr:first-child mat-icon').contains('edit').first().click();\n// Step 11: Ensure modal appears\ncy.get('.cds--modal-container.cds--modal-container--lg', {\n  timeout: 20000\n}).should('exist').and('be.visible');\n// Step 12: Ensure modal header appears\ncy.get('h4.card-title').should('contain', 'Edit PO/WO');\n//  // Step 13: Add PO Activity\n// po_activities();\n// cy.log('✅ PO Activity added');\n// Step 14: Add PO Scope\n(0, _POScopeGroups.po_scope)();\ncy.log('✅ PO Scope added');\n// Step 15: Assign Technician\n(0, _POAssignTech.po_assigntech)();\ncy.log('✅ PO Assigned Technician');",
+              "err": {},
+              "uuid": "ef468ea5-5552-442c-9d38-f27c8e480174",
+              "parentUUID": "fed4f6cd-34d9-4042-aa4a-d8aaf1b196c3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ef468ea5-5552-442c-9d38-f27c8e480174"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 51161,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
