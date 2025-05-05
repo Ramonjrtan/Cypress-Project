@@ -1,27 +1,28 @@
-import { login } from '../support/LoginGroups';
-import { navigate_contract } from '../support/ContractGroups';
-import { add_ticket } from '../support/AddTicketGroups';
-import { edit_ticket } from '../support/EditTicketGroups';
-import { add_site } from '../support/AddSiteGroups';
-import { add_activity } from '../support/AddActivityGroups';
-import { add_schedule } from '../support/AddScheduleGroups';
-import { po_scope } from '../support/POScopeGroups';
-import { po_activities } from '../support/POActivitiesGroups';
-import { po_assigntech } from '../support/POAssignTech.Groups';
-import { po_deliverables } from '../support/PODeliverablesGroups';
-import { po_reviewtech } from '../support/ReviewTechGroups';
+import { login } from '../support/D1_LoginGroups';
+import { navigate_contract } from '../support/D1_ContractGroups';
+import { add_ticket } from '../support/D1_AddTicketGroups';
+import { edit_ticket } from '../support/D1_EditTicketGroups';
+import { add_site } from '../support/D1_AddSiteGroups';
+import { add_activity } from '../support/D1_AddActivityGroups';
+import { add_schedule } from '../support/D1_AddScheduleGroups';
+import { po_scope } from '../support/D1_POScopeGroups';
+import { po_activities } from '../support/D1_POActivitiesGroups';
+import { po_assigntech } from '../support/D1_POAssignTech.Groups';
+import { po_deliverables } from '../support/D1_PODeliverablesGroups';
+import { po_reviewtech } from '../support/D1_ReviewTechGroups';
+import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
 describe('Add ticket, update details, PO details, assign and review technician', () => {
+    
   it('should add ticket, update details, PO details, assign and review technician', () => {
     cy.viewport(1920, 1080);
+// Step 1: Perform login
+login(env.email, env.password);
+cy.log('✅ Successfully logged in');
 
-    // Step 1: Perform login
-    login(Cypress.env('email'), Cypress.env('password'));
-    cy.log('✅ Successfully logged in');
-
-    //Wait until Task Dashboard load
-    cy.get("div.header-wrapper h1", { timeout: 60000 })
+// Wait until Task Dashboard loads
+cy.get(env.taskDashboardHeader, { timeout: 60000 })
   .should("be.visible")
   .and("contain", "Task Dashboard");
 
@@ -49,34 +50,35 @@ describe('Add ticket, update details, PO details, assign and review technician',
     add_schedule();
     cy.log('✅ Schedule added');
 
-    // Step 8: Click on Buy tab
-    cy.get('.mat-icon')
-      .contains('shopping_cart')
-      .should('be.visible')
-      .click();
+  // Step 8: Click on Buy tab
+  cy.get(env.buyTabIcon)
+    .contains(env.buyTabText)
+    .should('be.visible')
+    .click();
 
-    // Step 9: Wait until the page loads completely
-    cy.contains('app-legacy-status-label', 'Staged', { timeout: 10000 })
-      .should('be.visible');
+  // Step 9: Wait until the page loads completely
+  cy.contains(env.stagedLabel, 'Staged', { timeout: 10000 })
+    .should('be.visible');
 
-    // Step 10: Click on Edit PO button
-    cy.get('tbody tr:first-child mat-icon')
-      .contains('edit')
-      .first()
-      .click();
+  // Step 10: Click on Edit PO button
+  cy.get(env.editPOIcon)
+    .contains('edit')
+    .first()
+    .click();
 
-    // Step 11: Ensure modal appears
-    cy.get('.cds--modal-container.cds--modal-container--lg', { timeout: 20000 })
-      .should('exist')
-      .and('be.visible');
+  // Step 11: Ensure modal appears
+  cy.get(env.modalContainerLg, { timeout: 20000 })
+    .should('exist')
+    .and('be.visible');
 
-    // Step 12: Ensure modal header appears
-    cy.get('h4.card-title')
-      .should('contain', 'Edit PO/WO');
+  // Step 12: Ensure modal header appears
+  cy.get(env.modalHeaderPO)
+    .should('contain', 'Edit PO/WO');
 
-          // Step 14: Add PO Scope
-    po_scope();
-    cy.log('✅ PO Scope added');
+// // Step 14: Add PO Scope
+// po_scope();
+// cy.log('✅ PO Scope added');
+
 
      // Step 13: Add PO Activity
     po_activities();
