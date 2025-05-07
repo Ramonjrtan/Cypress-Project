@@ -1,13 +1,13 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { login } from '../support/D1_LoginGroups';
 import { cp_login } from '../support/CP_LoginGroups';
 import { cp_addticket } from '../support/CP_CreateTicketGroups';
 
-// 📦 Test block
+//  Test block
 describe('Visit different origins', () => {
   it('should login and work across multiple origins', () => {
     cy.viewport(1920, 1080);
