@@ -1,11 +1,11 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { login } from "../support/D1_LoginGroups";
 import { bulkupload_ticket } from "../support/D1_BulkUploadTicket";
 
-// 📦 Test block
+//  Test block
 describe('Bulk Upload D1 ticket', () => {
   it('should bulk upload tickets', () => {
     cy.viewport(1920, 1080);
