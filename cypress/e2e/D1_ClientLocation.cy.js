@@ -1,13 +1,13 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { d1_addlocation } from '../support/D1_AddLocationGroups';
 import { d1_deletelocation } from '../support/D1_DeleteLocationGroups';
 import { d1_editlocation } from '../support/D1_EditLocationGroups';
 import { login } from "../support/D1_LoginGroups";
 
-// 📦 Test block
+//  Test block
 describe('Add, Edit, Delete Location', () => {
   it('should add, update, and delete a Location', () => {
     cy.viewport(1920, 1080);
