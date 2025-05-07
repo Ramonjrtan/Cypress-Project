@@ -1,9 +1,13 @@
+// 🔁 Cypress & Environment
+import env from '../../cypress.env.json';
+
+// ✅ Feature Support Functions (alphabetically)
 import { login } from "../support/D1_LoginGroups";
 import { d1_addvendor } from "../support/D1_AddVendorGroups";
 import { d1_editvendor } from "../support/D1_EditVendorGroups";
 import { d1_deletevendor } from "../support/D1_DeleteVendorGroups";
-import env from '../../cypress.env.json';
 
+// 📦 Test block
 describe('Add, Edit, Delete Vendors', () => {
   it('should add, edit, and delete a vendor', () => {
     cy.viewport(1920, 1080);
@@ -34,7 +38,7 @@ describe('Add, Edit, Delete Vendors', () => {
     cy.wait(5000); // Wait for the page to refresh and load completely
     
 
-    // // Step 5: Delete Vendor
+    // Step 5: Delete Vendor (commented out for now)
     // d1_deletevendor(); // Make sure this function includes all necessary validations
     // cy.log('✅ Vendor deleted');
   });

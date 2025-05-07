@@ -1,8 +1,12 @@
-import { cp_login } from '../support/CP_LoginGroups';
-import { cp_addticket } from '../support/CP_CreateTicketGroups';
-import 'cypress-wait-until';
+// 🔁 Cypress & Environment
 import env from '../../cypress.env.json';
+import 'cypress-wait-until';
 
+// ✅ Feature Support Functions (alphabetically)
+import { cp_addticket } from '../support/CP_CreateTicketGroups';
+import { cp_login } from '../support/CP_LoginGroups';
+
+// 📦 Test block
 describe('Client Portal - Add Ticket Flow', () => {
   it('should successfully add a new ticket through the Client Portal', () => {
     cy.viewport(1920, 1080);
@@ -19,7 +23,7 @@ describe('Client Portal - Add Ticket Flow', () => {
     cp_addticket();
     cy.log('✅ Ticket added');
 
-    // Saved Ticket Number
+    // Step 4: Navigate to My Tickets and extract ticket number
     cy.get(env.cpMyTicketsLink).should('be.visible').click();
     cy.log('✅ Success: Clicked My Tickets');
 
@@ -34,6 +38,5 @@ describe('Client Portal - Add Ticket Flow', () => {
         cy.wrap(cpticketNumber).as('cpTicketNumber');
         cy.log('✅ Ticket Number: ' + cpticketNumber);
       });
-
   });
 });

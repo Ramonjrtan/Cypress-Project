@@ -1,8 +1,12 @@
-import { cp_login } from '../support/CP_LoginGroups';
-import { cp_ticketbulkupload } from '../support/CP_TicketBulkUploadGroups';
+// 🔁 Cypress & Environment
 import 'cypress-wait-until';
 import env from '../../cypress.env.json';
 
+// ✅ Feature Support Functions (alphabetically)
+import { cp_login } from '../support/CP_LoginGroups';
+import { cp_ticketbulkupload } from '../support/CP_TicketBulkUploadGroups';
+
+// 📦 Test block
 describe('Client Portal - Add location', () => {
   it('should successfully add a new location through the Client Portal', () => {
     cy.viewport(1920, 1080);

@@ -1,9 +1,13 @@
-import { login } from '../support/D1_LoginGroups';
-import { cp_login } from '../support/CP_LoginGroups';
-import { cp_addticket } from '../support/CP_CreateTicketGroups';
+// 🔁 Cypress & Environment
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
+// ✅ Feature Support Functions (alphabetically)
+import { login } from '../support/D1_LoginGroups';
+import { cp_login } from '../support/CP_LoginGroups';
+import { cp_addticket } from '../support/CP_CreateTicketGroups';
+
+// 📦 Test block
 describe('Visit different origins', () => {
   it('should login and work across multiple origins', () => {
     cy.viewport(1920, 1080);
@@ -26,9 +30,6 @@ describe('Visit different origins', () => {
     cy.get('.name').should('be.visible').click();
     cy.contains('Logout').should('be.visible').click();
     cy.wait(3000);
-
-  
-  
 
     // Step 5: Intercept B2C redirect URL
     cy.intercept('GET', '**/b2c_1_dispatch3_signupsignin/**').as('b2cRedirect');

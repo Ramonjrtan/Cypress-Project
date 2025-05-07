@@ -3,25 +3,27 @@ import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
 // ✅ Feature Support Functions (alphabetically)
-import { login } from '../support/D1_LoginGroups';
-import { navigate_contract } from '../support/D1_ContractGroups';
-import { add_ticket } from '../support/D1_AddTicketGroups';
-import { edit_ticket } from '../support/D1_EditTicketGroups';
-import { add_site } from '../support/D1_AddSiteGroups';
+import { activitybcsync } from '../support/D1_ActivityBCSyncGroups';
 import { add_activity } from '../support/D1_AddActivityGroups';
 import { add_schedule } from '../support/D1_AddScheduleGroups';
-import { po_scope } from '../support/D1_POScopeGroups';
+import { add_site } from '../support/D1_AddSiteGroups';
+import { add_ticket } from '../support/D1_AddTicketGroups';
+import { addticketbcsync } from '../support/D1_BCSyncBadgeGroups';
+import { edit_ticket } from '../support/D1_EditTicketGroups';
+import { login } from '../support/D1_LoginGroups';
+import { navigate_contract } from '../support/D1_ContractGroups';
 import { po_activities } from '../support/D1_POActivitiesGroups';
 import { po_assigntech } from '../support/D1_POAssignTech.Groups';
 import { po_deliverables } from '../support/D1_PODeliverablesGroups';
 import { po_reviewtech } from '../support/D1_ReviewTechGroups';
+import { po_scope } from '../support/D1_POScopeGroups';
+import { podetailsbcsync } from '../support/D1_PODetailsBCSyncGroups';
 
 // 📦 Test block
-describe('Add ticket, update details, PO details, assign and review technician', () => {
-    
-  it('should add ticket, update details, PO details, assign and review technician', () => {
+describe('BC Sync Badge', () => {
+  it('should show BC Sync Badge properly', () => {
     cy.viewport(1920, 1080);
-    
+
     // Step 1: Perform login
     login(env.email, env.password);
     cy.log('✅ Successfully logged in');
@@ -43,62 +45,73 @@ describe('Add ticket, update details, PO details, assign and review technician',
     edit_ticket();
     cy.log('✅ Ticket edited');
 
-    // Step 5: Add site
+    // Step 5: Verify Ticket BC Sync badge
+    addticketbcsync();
+    cy.log('✅ Ticket BC Sync badge is visible');
+
+    // Step 6: Add site
     add_site();
     cy.log('✅ Site added');
 
-    // Step 6: Add activity
+    // Step 7: Add activity
     add_activity();
     cy.log('✅ Activity added');
 
-    // Step 7: Add schedule
+    // Step 8: Verify Activity BC Sync badge
+    activitybcsync();
+    cy.log('✅ Activity BC Sync badge is visible');
+
+    // Step 9: Add schedule
     add_schedule();
     cy.log('✅ Schedule added');
 
-    // Step 8: Click on Buy tab
+    // Step 10: Click on Buy tab
     cy.get(env.buyTabIcon)
       .contains(env.buyTabText)
       .should('be.visible')
       .click();
 
-    // Step 9: Wait until the page loads completely
+    // Step 11: Wait until the page loads completely
     cy.contains(env.stagedLabel, 'Staged', { timeout: 10000 })
       .should('be.visible');
 
-    // Step 10: Click on Edit PO button
+    // Step 12: Click on Edit PO button
     cy.get(env.editPOIcon)
       .contains('edit')
       .first()
       .click();
 
-    // Step 11: Ensure modal appears
+    // Step 13: Ensure modal appears
     cy.get(env.modalContainerLg, { timeout: 20000 })
       .should('exist')
       .and('be.visible');
 
-    // Step 12: Ensure modal header appears
+    // Step 14: Ensure modal header appears
     cy.get(env.modalHeaderPO)
       .should('contain', 'Edit PO/WO');
 
-    // Step 13: Add PO Scope
+    // Step 15: Add PO Scope
     po_scope();
     cy.log('✅ PO Scope added');
 
-    // Step 14: Add PO Activity
+    // Step 16: Add PO Activity
     po_activities();
     cy.log('✅ PO Activity added');
 
-    // Step 15: Add PO Deliverables
+    // Step 17: Add PO Deliverables
     po_deliverables();
     cy.log('✅ PO Deliverables added');
 
-    // Step 16: Assign Technician
+    // Step 18: Assign Technician
     po_assigntech();
     cy.log('✅ PO Assigned Technician');
 
-    // Step 17: Review technician
+    // Step 19: Verify PO Details BC Sync badge
+    podetailsbcsync();
+    cy.log('✅ PO Details BC Sync badge is visible');
+
+    // Step 20: Review technician
     po_reviewtech();
     cy.log('✅ Review technician');
-    
   });
 });

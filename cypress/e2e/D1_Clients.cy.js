@@ -1,8 +1,11 @@
-import { d1_addclient } from "../support/D1_AddClientGroups";
-import { d1_editclient } from "../support/D1_EditClientGroups";
-import { d1_deleteclient } from "../support/D1_DeleteClientGroups";
-import { login } from "../support/D1_LoginGroups";
+// 🔁 Cypress & Environment
 import env from '../../cypress.env.json';
+import { login } from "../support/D1_LoginGroups";
+
+// ✅ Feature Support Functions (alphabetically)
+import { d1_addclient } from "../support/D1_AddClientGroups";
+import { d1_deleteclient } from "../support/D1_DeleteClientGroups";
+import { d1_editclient } from "../support/D1_EditClientGroups";
 
 describe('Add, Edit, Delete Client', () => {
   it('should add, update and delete a Client', () => {
@@ -25,7 +28,7 @@ describe('Add, Edit, Delete Client', () => {
     d1_editclient(); // Ensure this function correctly edits the client   
     cy.log('✅ Client edited');
 
-    // // Step 4: Delete Client using d1_deleteclient (uncomment if needed)
+    // Step 4: Delete Client using d1_deleteclient (uncomment if needed)
     // d1_deleteclient(); // Ensure this function correctly deletes the client
     // cy.log('✅ Client deleted');
   });
