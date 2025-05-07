@@ -1,8 +1,8 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { activitybcsync } from '../support/D1_ActivityBCSyncGroups';
 import { add_activity } from '../support/D1_AddActivityGroups';
 import { add_schedule } from '../support/D1_AddScheduleGroups';
@@ -20,7 +20,7 @@ import { po_scope } from '../support/D1_POScopeGroups';
 import { podetailsbcsync } from '../support/D1_PODetailsBCSyncGroups';
 import { searchpagebcsync } from '../support/D1_SearchPageBCSyncGroups';
 
-// 📦 Test block
+//  Test block
 describe('BC Sync Badge', () => {
   it('should show BC Sync Badge properly', () => {
     cy.viewport(1920, 1080);
