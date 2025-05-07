@@ -139,6 +139,12 @@ export function add_schedule() {
     .should('be.visible')
     .click();
 
+// Toast: Task "Add Schedule"
+cy.get('.toast-info > .toast-message', { timeout: 10000 })
+  .should('be.visible')
+  .contains('Task "Add Schedule" has been automatically completed.');
+cy.log('✅ Toast message for Add Schedule appears successfully');
+
   // Step 24: Verify success message
   cy.get(env.updateScheduleSuccessMessage)
     .should('be.visible');

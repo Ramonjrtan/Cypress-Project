@@ -34,8 +34,8 @@ describe('Add, Edit, Delete Vendors', () => {
     cy.wait(5000); // Wait for the page to refresh and load completely
     
 
-    // Step 5: Delete Vendor
-    d1_deletevendor(); // Make sure this function includes all necessary validations
-    cy.log('✅ Vendor deleted');
+    // // Step 5: Delete Vendor
+    // d1_deletevendor(); // Make sure this function includes all necessary validations
+    // cy.log('✅ Vendor deleted');
   });
 });

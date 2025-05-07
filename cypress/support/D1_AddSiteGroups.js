@@ -51,6 +51,12 @@ export function add_site() {
     .should("be.visible")
     .click();
 
+    // Toast: Task "Add Site"
+    cy.get('.toast-info > .toast-message', { timeout: 10000 })
+    .should('be.visible')
+    .contains('Task "Add Site" has been automatically completed.');
+  cy.log('✅ Toast message for Add Site appears successfully');
+
   // Step 10: Verify success message
   cy.get(env.siteSuccessMessage, { timeout: 10000 })
     .should('be.visible');
