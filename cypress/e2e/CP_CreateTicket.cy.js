@@ -1,12 +1,12 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { cp_addticket } from '../support/CP_CreateTicketGroups';
 import { cp_login } from '../support/CP_LoginGroups';
 
-// 📦 Test block
+//  Test block
 describe('Client Portal - Add Ticket Flow', () => {
   it('should successfully add a new ticket through the Client Portal', () => {
     cy.viewport(1920, 1080);
