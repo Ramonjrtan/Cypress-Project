@@ -1,13 +1,13 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { login } from "../support/D1_LoginGroups";
 import { d1_addvendorrates } from "../support/D1_AddVendorRatesGroups";
 import { d1_editvendorrates } from "../support/D1_EditVendorRatesGroups";
 import { d1_deletevendorrates } from "../support/D1_DeleteVendorRatesGroups";
 
-// 📦 Test block
+//  Test block
 describe('Add, Edit, Delete Vendor Rates', () => {
 
   it('should login and navigate to dashboard',() => {
