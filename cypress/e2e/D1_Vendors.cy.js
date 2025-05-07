@@ -1,13 +1,13 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { login } from "../support/D1_LoginGroups";
 import { d1_addvendor } from "../support/D1_AddVendorGroups";
 import { d1_editvendor } from "../support/D1_EditVendorGroups";
 import { d1_deletevendor } from "../support/D1_DeleteVendorGroups";
 
-// 📦 Test block
+//  Test block
 describe('Add, Edit, Delete Vendors', () => {
   it('should add, edit, and delete a vendor', () => {
     cy.viewport(1920, 1080);
