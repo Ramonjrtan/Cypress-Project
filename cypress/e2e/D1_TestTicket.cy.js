@@ -1,8 +1,8 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { login } from '../support/D1_LoginGroups';
 import { navigate_contract } from '../support/D1_ContractGroups';
 import { add_ticket } from '../support/D1_AddTicketGroups';
@@ -16,7 +16,7 @@ import { po_assigntech } from '../support/D1_POAssignTech.Groups';
 import { po_deliverables } from '../support/D1_PODeliverablesGroups';
 import { po_reviewtech } from '../support/D1_ReviewTechGroups';
 
-// 📦 Test block
+//  Test block
 describe('Add ticket, update details, PO details, assign and review technician', () => {
     
   it('should add ticket, update details, PO details, assign and review technician', () => {
