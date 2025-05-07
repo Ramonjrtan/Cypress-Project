@@ -1,11 +1,11 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { d1_bulkuploadlocaton } from "../support/D1_BulkUploadLocation";
 import { login } from "../support/D1_LoginGroups";
 
-// 📦 Test Block
+//  Test Block
 describe('Bulk Upload Client Location', () => {
 
   it('should bulk upload client location', () => {
