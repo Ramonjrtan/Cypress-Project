@@ -1,12 +1,12 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { login } from '../support/D1_LoginGroups';
 import { d1_addtechnician } from "../support/D1_AddTechnicianGroups";       
 
-// 📦 Test block
+//  Test block
 describe('Add Technician', () => {
     it('should add a technician', () => {
         cy.viewport(1920, 1080);
