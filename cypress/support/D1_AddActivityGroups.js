@@ -26,6 +26,8 @@ export function add_activity() {
   cy.get(env.modalHeader, { timeout: 10000 })
     .should('contain', 'Add Activity');
 
+    cy.wait(5000); // Wait for 5 seconds to ensure the modal is fully loaded
+
   // Function to search and select the activity with retry limit
   const searchAndSelectActivity = (retryCount = 0) => {
     const maxRetries = 3;

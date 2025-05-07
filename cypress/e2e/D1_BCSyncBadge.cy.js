@@ -8,7 +8,7 @@ import { add_activity } from '../support/D1_AddActivityGroups';
 import { add_schedule } from '../support/D1_AddScheduleGroups';
 import { add_site } from '../support/D1_AddSiteGroups';
 import { add_ticket } from '../support/D1_AddTicketGroups';
-import { addticketbcsync } from '../support/D1_BCSyncBadgeGroups';
+import { addticketbcsync } from '../support/D1_AddTicketBCSyncGroups';
 import { edit_ticket } from '../support/D1_EditTicketGroups';
 import { login } from '../support/D1_LoginGroups';
 import { navigate_contract } from '../support/D1_ContractGroups';
@@ -18,6 +18,7 @@ import { po_deliverables } from '../support/D1_PODeliverablesGroups';
 import { po_reviewtech } from '../support/D1_ReviewTechGroups';
 import { po_scope } from '../support/D1_POScopeGroups';
 import { podetailsbcsync } from '../support/D1_PODetailsBCSyncGroups';
+import { searchpagebcsync } from '../support/D1_SearchPageBCSyncGroups';
 
 // 📦 Test block
 describe('BC Sync Badge', () => {
@@ -110,8 +111,16 @@ describe('BC Sync Badge', () => {
     podetailsbcsync();
     cy.log('✅ PO Details BC Sync badge is visible');
 
-    // Step 20: Review technician
-    po_reviewtech();
-    cy.log('✅ Review technician');
+    // // Step 20: Review technician
+    // po_reviewtech();
+    // cy.log('✅ Review technician');
+
+     // Step 2: Navigate to contract
+    navigate_contract();
+    cy.log('✅ Navigated to contract');
+
+    //searchpagebcsync();
+    searchpagebcsync();
+    cy.log('✅ BC Sync badge is visible in search page');
   });
 });

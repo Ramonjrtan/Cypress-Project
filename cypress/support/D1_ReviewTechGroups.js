@@ -19,6 +19,8 @@ export function po_reviewtech() {
     .find(env.ratingModalHeader)
     .should('contain.text', 'Add Ticket Rating');
 
+    cy.get('.content > .loading-wrapper').should('not.exist'); // Wait until the loading spinner disappears
+
   // Step 3: Click on the "Reviewer" dropdown to open it
   cy.get(env.reviewerDropdown).click();
 

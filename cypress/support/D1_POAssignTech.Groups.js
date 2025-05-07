@@ -24,6 +24,8 @@ cy.wait(5000); // Wait for 5 seconds to ensure the page is fully loaded
   cy.contains(env.assignTechHeader, 'Assign Technician', { timeout: 10000 })
     .should('be.visible');
 
+    cy.get('#tech-select > .loading-wrapper').should('not.exist'); // Wait until the loading spinner disappears
+
   // Wait until the radio button is visible
   cy.get(env.techRadioButton, { timeout: 60000 })
     .should('exist')
