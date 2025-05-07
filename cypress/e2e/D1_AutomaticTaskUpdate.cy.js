@@ -1,8 +1,8 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { add_activity } from '../support/D1_AddActivityGroups';
 import { add_schedule } from '../support/D1_AddScheduleGroups';
 import { add_site } from '../support/D1_AddSiteGroups';
@@ -11,7 +11,7 @@ import { edit_ticket } from '../support/D1_EditTicketGroups';
 import { login } from '../support/D1_LoginGroups';
 import { navigate_contract } from '../support/D1_ContractGroups';
 
-// 📦 Test block
+//  Test block
 describe('Automatic task update', () => {
   it('should show toast message for Automatic task update', () => {
     cy.viewport(1920, 1080);
