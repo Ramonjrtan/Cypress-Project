@@ -1,12 +1,13 @@
-// 🔁 Cypress & Environment
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 import { login } from "../support/D1_LoginGroups";
 
-// ✅ Feature Support Functions (alphabetically)
+//  Feature Support Functions (alphabetically)
 import { d1_addclient } from "../support/D1_AddClientGroups";
 import { d1_deleteclient } from "../support/D1_DeleteClientGroups";
 import { d1_editclient } from "../support/D1_EditClientGroups";
 
+// Test Block
 describe('Add, Edit, Delete Client', () => {
   it('should add, update and delete a Client', () => {
     cy.viewport(1920, 1080);
