@@ -4,11 +4,11 @@ export function d1_adddeal() {
   cy.wait(5000);
 
   // Step 1: Click on Opportunities 
-  cy.contains(env.Deals.ClientsTabIcon, 'psychiatry').click();
-  cy.log('✅ Successfully Clicked Vendors');
+  cy.contains(env.Deals.OpportunitiesTabIcon, 'psychiatry').click();
+  cy.log('✅ Successfully Clicked Opportunities Tab Icon');
 
   // Step 2: Ensure header appears
-  cy.get(env.Deals.ClientsPageHeader, { timeout: 20000 })
+  cy.get(env.Deals.DealPageHeader, { timeout: 20000 })
     .contains('Deal')
     .should('be.visible');
   cy.log('✅ Deal page header is visible');
@@ -68,15 +68,15 @@ export function d1_adddeal() {
     cy.get(env.Deals.DescriptionTextarea).type('Cypress Test Deal');
     cy.log('✅ Description entered successfully');
 
-    // Solutioning Owner
+    // Deal Owner
     cy.get(env.Deals.SolutioningOwnerDropdown).click();
     cy.log('✅ Solutioning Owner dropdown opened successfully');
 
-    // Filter Solutioning Owner
+    // Filter Deal Owner
     cy.get(env.Deals.SolutioningOwnerInput).type('Ramon-GMAIL', { force: true });
     cy.log('✅ Filtered Solutioning Owner options successfully');
 
-    cy.contains(env.Deals.SolutioningOwnerDropdown, 'Ramon-GMAIL').click();
+    cy.contains(env.Deals.SolutioningOwner, 'Ramon-GMAIL').click();
     cy.log('✅ Solutioning Owner selected successfully');
 
     // Sales Owner
@@ -87,7 +87,7 @@ export function d1_adddeal() {
     cy.get(env.Deals.SalesOwnerInput).type('Ramon-GMAIL', { force: true });
     cy.log('✅ Filtered Sales Owner options successfully');
 
-    cy.contains(env.Deals.SalesOwnerDropdown, 'Ramon-GMAIL').click();
+    cy.contains(env.Deals.SolutioningOwner, 'Ramon-GMAIL').click();
     cy.log('✅ Sales Owner selected successfully');
 
     // Client
@@ -98,7 +98,7 @@ export function d1_adddeal() {
     cy.get(env.Deals.ClientInput).type('Test Client (USE FOR TESTING)', { force: true });
     cy.log('✅ Filtered Client options successfully');
 
-    cy.contains(env.Deals.ClientDropdown, 'Test Client (USE FOR TESTING)').click();
+    cy.contains(env.Deals.olutioningOwner, 'Test Client (USE FOR TESTING)').click();
     cy.log('✅ Client selected successfully');
 
     // First Name
@@ -133,5 +133,14 @@ export function d1_adddeal() {
     // Step 8: Click the Save button safely
     cy.get(env.Deals.SaveButton).first().click(); // clicks only the first match
     cy.log('✅ Successfully Clicked Save');
+
+    cy.contains('Deal Updated successfully.', { timeout: 10000 })
+      .should('be.visible');
+      cy.log('✅ Deal Updated successfully message is visible');
+
+    cy.contains('Deal Updated successfully.', { timeout: 10000 })
+      .should('not.exist');
+      cy.log('✅ Verified success message disappeared');
+      
   });
 }
