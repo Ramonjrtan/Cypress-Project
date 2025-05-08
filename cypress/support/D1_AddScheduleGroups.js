@@ -140,7 +140,7 @@ export function add_schedule() {
     .click();
 
 // Toast: Task "Add Schedule"
-cy.get('.toast-info > .toast-message', { timeout: 10000 })
+cy.get(env.toastMsg.AutoUpdate, { timeout: 10000 })
   .should('be.visible')
   .contains('Task "Add Schedule" has been automatically completed.');
 cy.log('✅ Toast message for Add Schedule appears successfully');

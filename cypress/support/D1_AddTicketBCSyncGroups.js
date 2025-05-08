@@ -5,7 +5,7 @@ export function addticketbcsync() {
   cy.wait(5000);
 
   // Step: Verify that the BC Synced badge (normal state) is visible
-  cy.get('button.normal.show-button mat-icon[role="img"]', { timeout: 60000 })
+  cy.get(env.bcSync.TicketSync, { timeout: 60000 })
     .should('be.visible');
     
   cy.log('✅ Ticket BC Synced badge is visible');

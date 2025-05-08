@@ -62,7 +62,7 @@ export function add_activity() {
   cy.get(env.activitySaveButton).click({ force: true });
 
   // Toast: Task "Add Activities"
-  cy.get('.toast-info > .toast-message', { timeout: 10000 })
+  cy.get(env.toastMsg.AutoUpdate, { timeout: 10000 })
   .should('be.visible')
   .contains('Task "Add Activities" has been automatically completed.');
 cy.log('✅ Toast message for Add Activities appears successfully');

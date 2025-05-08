@@ -52,7 +52,7 @@ export function add_site() {
     .click();
 
     // Toast: Task "Add Site"
-    cy.get('.toast-info > .toast-message', { timeout: 10000 })
+    cy.get(env.toastMsg.AutoUpdate, { timeout: 10000 })
     .should('be.visible')
     .contains('Task "Add Site" has been automatically completed.');
   cy.log('✅ Toast message for Add Site appears successfully');
