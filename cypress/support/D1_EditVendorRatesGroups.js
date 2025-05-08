@@ -46,7 +46,7 @@ cy.wait(5000);
   cy.wait(1000); // Optional short wait to ensure modal is rendered
 
   // Step 5: Enter comments
-  cy.get(env.vendorRatesComments).scrollIntoView().type('Cypress Test Comment');        
+  cy.get(env.vendorRates.Comments).scrollIntoView().type('Cypress Test Comment');        
   cy.log('✅ Comment entered successfully');
 
   // Step 6: Click Save
@@ -54,13 +54,13 @@ cy.wait(5000);
   cy.log('✅ Save button clicked successfully');
 
   // Step 7: Confirm success message
-  cy.get(env.toastMessageContainer, { timeout: 10000 })
+  cy.get(env.vendorRates.ToastMessageContainer, { timeout: 10000 })
     .should('be.visible')
     .contains('Vendor rates updated successfully');
   cy.log('✅ Success: Vendor rates updated');
 
   // Step 8: Confirm success message disappears
   cy.wait(2000); // Allow time for toast to disappear
-  cy.get(env.toastMessageContainer, { timeout: 10000 }).should('not.exist');
+  cy.get(env.vendorRates.ToastMessageContainer, { timeout: 10000 }).should('not.exist');
   cy.log('✅ Success message disappeared successfully');
 }

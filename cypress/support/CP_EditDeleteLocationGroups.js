@@ -2,7 +2,7 @@ import env from '../../cypress.env.json';
 
 export function cp_editdeletelocation() {
   // Step 1: Click Locations tab
-  cy.get(env.cpLocations)
+  cy.get(env.clientPortal.Locations)
     .should('be.visible')
     .click();
   cy.log('✅ Success: Clicked Locations tab');
@@ -19,10 +19,10 @@ export function cp_editdeletelocation() {
   cy.log('✅ Success: Searched for Location');
 
   // Step 4: Search for the End Client
-  cy.get(env.cpEndClientDropdown)
+  cy.get(env.clientPortal.EndClientDropdown)
     .first()
     .type('Test End Client Portal #1', { timeout: 10000 });
-  cy.get(env.cpDropdownOption)
+  cy.get(env.clientPortal.DropdownOption)
     .contains('Test End Client Portal #1')
     .click();
   cy.log('✅ Success: Selected End Client');
@@ -53,7 +53,7 @@ export function cp_editdeletelocation() {
 //   cy.log('✅ Success: Clicked Autofill Address button');
 
   // Step 10: Enter Address
-  cy.get(env.cpLocationAddressInput)
+  cy.get(env.clientPortal.LocationAddressInput)
     .should('be.visible')
     .type('1611 N Meridian St, Indianapolis, IN 46202, United States', { force: true });
   cy.wait(3000); // Allow suggestions to load
@@ -72,8 +72,8 @@ export function cp_editdeletelocation() {
   cy.log('✅ Success: Clicked Save Location button');
 
   // Step 13: Verify Success Message
-  cy.get(env.cpSuccessMessage, { timeout: 10000 }).should('be.visible');
-  cy.get(env.cpSuccessMessage, { timeout: 10000 }).should('not.exist');
+  cy.get(env.clientPortal.SuccessMessage, { timeout: 10000 }).should('be.visible');
+  cy.get(env.clientPortal.SuccessMessage, { timeout: 10000 }).should('not.exist');
   cy.log('✅ Success: Location saved and confirmation verified');
 
   // Step 14: Search for the added Location again
@@ -84,10 +84,10 @@ export function cp_editdeletelocation() {
   cy.log('✅ Success: Searched for Location');
 
   // Step 15: Search for the End Client again
-  cy.get(env.cpEndClientDropdown)
+  cy.get(env.clientPortal.EndClientDropdown)
     .first()
     .type('Test End Client Portal #1', { timeout: 10000 });
-  cy.get(env.cpDropdownOption)
+  cy.get(env.clientPortal.DropdownOption)
     .contains('Test End Client Portal #1')
     .click();
   cy.log('✅ Success: Selected End Client');
@@ -127,10 +127,10 @@ export function cp_editdeletelocation() {
   cy.log('✅ Success: Searched for Location');
 
   // Step 21: Search for the End Client
-  cy.get(env.cpEndClientDropdown)
+  cy.get(env.clientPortal.EndClientDropdown)
     .first()
     .type('Test End Client Portal #1', { timeout: 10000 });
-  cy.get(env.cpDropdownOption)
+  cy.get(env.clientPortal.DropdownOption)
     .contains('Test End Client Portal #1')
     .click();
   cy.log('✅ Success: Selected End Client');

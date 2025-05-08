@@ -3,7 +3,7 @@ import 'cypress-file-upload';
 
 export function cp_ticketbulkupload() {
   // Step 1: Click My Tickets
-  cy.get(env.cpMyTicketsLink).should('be.visible').click();
+  cy.get(env.clientPortal.MyTicketsLink).should('be.visible').click();
   cy.log('✅ Success: Clicked My Tickets');
 
   // Step 2: Click "+ Add Ticket" button

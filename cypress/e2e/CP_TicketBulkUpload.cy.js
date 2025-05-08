@@ -16,7 +16,7 @@ describe('Client Portal - Add location', () => {
     cy.log('✅ Successfully logged in');
 
     // Step 2: Wait for the dashboard to load
-    cy.get(env.cpDashboard, { timeout: 50000 }).should('be.visible');
+    cy.get(env.clientPortal.Dashboard, { timeout: 50000 }).should('be.visible');
     cy.log('✅ Dashboard is visible');
 
     // Step 3: Bulk upload ticket

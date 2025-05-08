@@ -16,7 +16,7 @@ describe('Client Portal - Add Ticket Flow', () => {
     cy.log('✅ Successfully logged in');
 
     // Step 2: Wait for the dashboard to load
-    cy.get(env.cpDashboard, { timeout: 50000 }).should('be.visible');
+    cy.get(env.clientPortal.Dashboard, { timeout: 50000 }).should('be.visible');
     cy.log('✅ Dashboard is visible');
 
     // Step 3: Add a new ticket
@@ -24,7 +24,7 @@ describe('Client Portal - Add Ticket Flow', () => {
     cy.log('✅ Ticket added');
 
     // Step 4: Navigate to My Tickets and extract ticket number
-    cy.get(env.cpMyTicketsLink).should('be.visible').click();
+    cy.get(env.clientPortal.MyTicketsLink).should('be.visible').click();
     cy.log('✅ Success: Clicked My Tickets');
 
     cy.contains('h1', 'My Tickets', { timeout: 60000 }).should("be.visible");

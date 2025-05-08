@@ -48,13 +48,13 @@ cy.get('[buttontype="danger"] > .danger')
 
 
   // Step 5: Confirm success message appears
-  cy.get(env.toastMessageContainer, { timeout: 10000 })
+  cy.get(env.vendorRates.ToastMessageContainer, { timeout: 10000 })
     .should('be.visible')
     .contains('Deleted successfully');
   cy.log('✅ Success: Vendor rates deleted');
 
   // Step 6: Wait and confirm toast disappears
   cy.wait(2000); // Allow toast to auto-dismiss (adjust if needed)
-  cy.get(env.toastMessageContainer, { timeout: 10000 }).should('not.exist');
+  cy.get(env.vendorRates.ToastMessageContainer, { timeout: 10000 }).should('not.exist');
   cy.log('✅ Success message disappeared successfully');
 }
