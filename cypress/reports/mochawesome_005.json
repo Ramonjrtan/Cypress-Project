@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-09T11:25:55.164Z",
+    "end": "2025-05-09T11:26:26.865Z",
+    "duration": 31701,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "522ce645-6d4d-4f00-91f1-bba31aa43c59",
+      "title": "",
+      "fullFile": "cypress\\e2e\\CP_TicketBulkUpload.cy.js",
+      "file": "cypress\\e2e\\CP_TicketBulkUpload.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2d3bd143-d723-47ec-89fe-d365911a8560",
+          "title": "Client Portal - Add location",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should successfully add a new location through the Client Portal",
+              "fullTitle": "Client Portal - Add location should successfully add a new location through the Client Portal",
+              "timedOut": null,
+              "duration": 29983,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\n// Step 1: Log in to the Client Portal\n(0, _CP_LoginGroups.cp_login)(_cypressEnv.default.email, _cypressEnv.default.password);\ncy.log('✅ Successfully logged in');\n// Step 2: Wait for the dashboard to load\ncy.get(_cypressEnv.default.clientPortal.Dashboard, {\n  timeout: 50000\n}).should('be.visible');\ncy.log('✅ Dashboard is visible');\n// Step 3: Bulk upload ticket\n(0, _CP_TicketBulkUploadGroups.cp_ticketbulkupload)();\ncy.log('✅ Ticket bulk upload completed successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `mat-select[formcontrolname=\"Contract\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `mat-select[formcontrolname=\"Contract\"]`, but never found it.\n    at cp_ticketbulkupload (webpack://cypressproject-1/./cypress/support/CP_TicketBulkUploadGroups.js:18:49)\n    at Context.eval (webpack://cypressproject-1/./cypress/e2e/CP_TicketBulkUpload.cy.js:23:24)",
+                "diff": null
+              },
+              "uuid": "b685efba-6c58-4d87-84ab-b72fca1c1fd7",
+              "parentUUID": "2d3bd143-d723-47ec-89fe-d365911a8560",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b685efba-6c58-4d87-84ab-b72fca1c1fd7"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 29983,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

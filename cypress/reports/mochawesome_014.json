@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-09T11:36:19.129Z",
+    "end": "2025-05-09T11:38:32.695Z",
+    "duration": 133566,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e56ae7d5-0d8c-4adf-ba5c-59f9d54ac06d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\D1_TestTicket.cy.js",
+      "file": "cypress\\e2e\\D1_TestTicket.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ca9e4d67-525e-47ef-beb3-eaaf29b3ea18",
+          "title": "Add ticket, update details, PO details, assign and review technician",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add ticket, update details, PO details, assign and review technician",
+              "fullTitle": "Add ticket, update details, PO details, assign and review technician should add ticket, update details, PO details, assign and review technician",
+              "timedOut": null,
+              "duration": 131710,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\n// Step 1: Perform login\n(0, _D1_LoginGroups.login)(_cypressEnv.default.email, _cypressEnv.default.password);\ncy.log('✅ Successfully logged in');\n// Wait until Task Dashboard loads\ncy.get(_cypressEnv.default.taskDashboardHeader, {\n  timeout: 60000\n}).should(\"be.visible\").and(\"contain\", \"Task Dashboard\");\n// Step 2: Navigate to contract\n(0, _D1_ContractGroups.navigate_contract)();\ncy.log('✅ Navigated to contract');\n// Step 3: Add a new ticket\n(0, _D1_AddTicketGroups.add_ticket)();\ncy.log('✅ Ticket added');\n// Step 4: Edit the ticket\n(0, _D1_EditTicketGroups.edit_ticket)();\ncy.log('✅ Ticket edited');\n// Step 5: Add site\n(0, _D1_AddSiteGroups.add_site)();\ncy.log('✅ Site added');\n// Step 6: Add activity\n(0, _D1_AddActivityGroups.add_activity)();\ncy.log('✅ Activity added');\n// Step 7: Add schedule\n(0, _D1_AddScheduleGroups.add_schedule)();\ncy.log('✅ Schedule added');\n// Step 8: Click on Buy tab\ncy.get(_cypressEnv.default.buyTabIcon).contains(_cypressEnv.default.buyTabText).should('be.visible').click();\n// Step 9: Wait until the page loads completely\ncy.contains(_cypressEnv.default.stagedLabel, 'Staged', {\n  timeout: 10000\n}).should('be.visible');\n// Step 10: Click on Edit PO button\ncy.get(_cypressEnv.default.editPOIcon).contains('edit').first().click();\n// Step 11: Ensure modal appears\ncy.get(_cypressEnv.default.modalContainerLg, {\n  timeout: 20000\n}).should('exist').and('be.visible');\n// Step 12: Ensure modal header appears\ncy.get(_cypressEnv.default.modalHeaderPO).should('contain', 'Edit PO/WO');\n// Step 13: Add PO Scope\n(0, _D1_POScopeGroups.po_scope)();\ncy.log('✅ PO Scope added');\n// Step 14: Add PO Activity\n(0, _D1_POActivitiesGroups.po_activities)();\ncy.log('✅ PO Activity added');\n// Step 15: Add PO Deliverables\n(0, _D1_PODeliverablesGroups.po_deliverables)();\ncy.log('✅ PO Deliverables added');\n// Step 16: Assign Technician\n(0, _D1_POAssignTech.po_assigntech)();\ncy.log('✅ PO Assigned Technician');\n// Step 17: Review technician\n(0, _D1_ReviewTechGroups.po_reviewtech)();\ncy.log('✅ Review technician');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `div[aria-label='Success']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `div[aria-label='Success']`, but never found it.\n    at po_scope (webpack://cypressproject-1/./cypress/support/D1_POScopeGroups.js:58:5)\n    at Context.eval (webpack://cypressproject-1/./cypress/e2e/D1_TestTicket.cy.js:84:13)",
+                "diff": null
+              },
+              "uuid": "4a14d771-b453-4b80-be68-846a831b7260",
+              "parentUUID": "ca9e4d67-525e-47ef-beb3-eaaf29b3ea18",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4a14d771-b453-4b80-be68-846a831b7260"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 131710,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

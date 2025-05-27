@@ -58,4 +58,14 @@ cy.get(env.addressDropdown, { timeout: 10000 })
   cy.contains("Technician created successfully.", { timeout: 10000 })
     .should('not.exist');
   cy.log('✅ Verified success message disappeared');
+
+    // Step 1: Visit technician profile
+  cy.visit(env.techURLProfile);
+  cy.contains('h1, h2, h3', 'Technicians', { timeout: 10000 }).should('be.visible');
+  cy.log('✅ Technician page loaded successfully');
+
+  cy.get('input[placeholder="Name Search..."]').type('Cypress Test Technician', { force: true });
+  cy.log('✅ Technician name entered successfully');
+  cy. wait(3000);
+  cy.log
 }

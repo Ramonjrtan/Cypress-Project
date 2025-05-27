@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-09T11:33:36.781Z",
+    "end": "2025-05-09T11:34:26.635Z",
+    "duration": 49854,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cc757667-4147-42cf-9c2d-8c921999e013",
+      "title": "",
+      "fullFile": "cypress\\e2e\\D1_Clients.cy.js",
+      "file": "cypress\\e2e\\D1_Clients.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6d1fabbd-44b8-4d2c-8c96-0592f74532d7",
+          "title": "Add, Edit, Delete Client",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add, update and delete a Client",
+              "fullTitle": "Add, Edit, Delete Client should add, update and delete a Client",
+              "timedOut": null,
+              "duration": 48126,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\n// Step 1: Perform login\n(0, _D1_LoginGroups.login)(_cypressEnv.default.email, _cypressEnv.default.password);\ncy.log('✅ Successfully logged in');\n// Wait until Task Dashboard loads\ncy.get(_cypressEnv.default.taskDashboardHeader, {\n  timeout: 60000\n}).should(\"be.visible\").and(\"contain\", \"Task Dashboard\");\n// Step 2: Add Client using d1_addclient\n(0, _D1_AddClientGroups.d1_addclient)(); // Ensure this function correctly adds the client\ncy.log('✅ Client added');\n// Step 3: Edit Client using d1_editclient\n(0, _D1_EditClientGroups.d1_editclient)(); // Ensure this function correctly edits the client   \ncy.log('✅ Client edited');\n// Step 4: Delete Client using d1_deleteclient (uncomment if needed)\n// d1_deleteclient(); // Ensure this function correctly deletes the client\n// cy.log('✅ Client deleted');",
+              "err": {},
+              "uuid": "944870a1-5152-446d-b844-3e32bf6815a4",
+              "parentUUID": "6d1fabbd-44b8-4d2c-8c96-0592f74532d7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "944870a1-5152-446d-b844-3e32bf6815a4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 48126,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

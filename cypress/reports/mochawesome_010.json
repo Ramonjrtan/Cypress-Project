@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-09T11:32:53.687Z",
+    "end": "2025-05-09T11:33:34.166Z",
+    "duration": 40479,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e27de1f7-c48e-4d58-b974-d18c1904dd90",
+      "title": "",
+      "fullFile": "cypress\\e2e\\D1_ClientLocation.cy.js",
+      "file": "cypress\\e2e\\D1_ClientLocation.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "01835e1b-70f5-4778-a6e9-75c4e2ff426f",
+          "title": "Add, Edit, Delete Location",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add, update, and delete a Location",
+              "fullTitle": "Add, Edit, Delete Location should add, update, and delete a Location",
+              "timedOut": null,
+              "duration": 38663,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\n// Step 1: Perform login\n(0, _D1_LoginGroups.login)(_cypressEnv.default.email, _cypressEnv.default.password);\ncy.log('✅ Successfully logged in');\n// Wait until Task Dashboard loads\ncy.get(_cypressEnv.default.taskDashboardHeader, {\n  timeout: 60000\n}).should(\"be.visible\").and(\"contain\", \"Task Dashboard\");\n// Step 2: Add location\n(0, _D1_AddLocationGroups.d1_addlocation)(); // Ensure this function correctly adds the location\ncy.log('✅ Location added');\n// Step 3: Edit location (Optional)\n(0, _D1_EditLocationGroups.d1_editlocation)();\ncy.log('✅ Location edited');\n// Step 4: Delete location\n(0, _D1_DeleteLocationGroups.d1_deletelocation)();\ncy.log('✅ Location deleted');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '[ <td.ng-star-inserted>, 1 more... ]' to have text '2050 East Charleston Boulevard', but the text was '2050 East Charleston Boulevard2050 East Charleston Boulevard'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '[ <td.ng-star-inserted>, 1 more... ]' to have text '2050 East Charleston Boulevard', but the text was '2050 East Charleston Boulevard2050 East Charleston Boulevard'\n    at d1_addlocation (webpack://cypressproject-1/./cypress/support/D1_AddLocationGroups.js:67:57)\n    at Context.eval (webpack://cypressproject-1/./cypress/e2e/D1_ClientLocation.cy.js:25:19)",
+                "diff": "- '2050 East Charleston Boulevard2050 East Charleston Boulevard'\n+ '2050 East Charleston Boulevard'\n"
+              },
+              "uuid": "d7818808-a20b-4ab0-ad6b-57226c2d7985",
+              "parentUUID": "01835e1b-70f5-4778-a6e9-75c4e2ff426f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d7818808-a20b-4ab0-ad6b-57226c2d7985"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 38663,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

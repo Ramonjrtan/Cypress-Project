@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-09T11:39:53.872Z",
+    "end": "2025-05-09T11:41:12.752Z",
+    "duration": 78880,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "41a0b11d-3da1-4c8c-96f3-9e310d260da1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\D1_Vendors.cy.js",
+      "file": "cypress\\e2e\\D1_Vendors.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dcd2f9d1-78d3-4493-a483-8c1873f9e267",
+          "title": "Add, Edit, Delete Vendors",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add, edit, and delete a vendor",
+              "fullTitle": "Add, Edit, Delete Vendors should add, edit, and delete a vendor",
+              "timedOut": null,
+              "duration": 77198,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\n// Step 1: Perform login\n(0, _D1_LoginGroups.login)(_cypressEnv.default.email, _cypressEnv.default.password);\ncy.log('✅ Successfully logged in');\n// Step 2: Wait for Task Dashboard to load\ncy.get(_cypressEnv.default.taskDashboardHeader, {\n  timeout: 60000\n}).should('be.visible').and('contain', 'Task Dashboard');\ncy.log('✅ Task Dashboard loaded');\n// Step 3: Add Vendor\n(0, _D1_AddVendorGroups.d1_addvendor)(); // Make sure this function includes all necessary validations\ncy.log('✅ Vendor added');\ncy.reload(); // Refresh the page to ensure all changes are visible\ncy.wait(5000); // Wait for the page to refresh and load completely\n// Step 4: Edit Vendor\n(0, _D1_EditVendorGroups.d1_editvendor)(); // Make sure this function includes all necessary validations\ncy.log('✅ Vendor edited');\ncy.reload(); // Refresh the page to ensure all changes are visible\ncy.wait(5000); // Wait for the page to refresh and load completely\n// Step 5: Delete Vendor (commented out for now)\n// d1_deletevendor(); // Make sure this function includes all necessary validations\n// cy.log('✅ Vendor deleted');",
+              "err": {},
+              "uuid": "381db536-aa99-4d92-925d-19d0f2e3167b",
+              "parentUUID": "dcd2f9d1-78d3-4493-a483-8c1873f9e267",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "381db536-aa99-4d92-925d-19d0f2e3167b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 77198,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

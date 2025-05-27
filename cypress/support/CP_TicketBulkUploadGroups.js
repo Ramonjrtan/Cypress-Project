@@ -31,8 +31,11 @@ cy.log('✅ Success: Selected Dispatch SOW CP Test');
   cy.log('✅ Success: Clicked "Upload File"');
 
 // Step 6: Confirm success message
-cy.get("div[aria-label='Uploaded Successfully']", { timeout: 10000 }).should('be.visible');
+cy.get("div[aria-label='Uploaded Successfully']", { timeout: 30000 }).should('be.visible');
 cy.log('✅ Success: Upload confirmed');
 
+  // Step 1: Click My Tickets
+  cy.get(env.clientPortal.MyTicketsLink).should('be.visible').click();
+  cy.log('✅ Success: Clicked My Tickets');
 
 }

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-09T11:39:16.658Z",
+    "end": "2025-05-09T11:39:51.421Z",
+    "duration": 34763,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b036ecc0-5d49-4349-8563-803e4f9a8a8d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\D1_VendorRates.cy.js",
+      "file": "cypress\\e2e\\D1_VendorRates.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bc5ea3e5-8aa3-4751-ad3a-9b37627fc3d0",
+          "title": "Add, Edit, Delete Vendor Rates",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login and navigate to dashboard",
+              "fullTitle": "Add, Edit, Delete Vendor Rates should login and navigate to dashboard",
+              "timedOut": null,
+              "duration": 33005,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\n(0, _D1_LoginGroups.login)(_cypressEnv.default.email, _cypressEnv.default.password);\ncy.log('✅ Successfully logged in');\ncy.get(_cypressEnv.default.taskDashboardHeader, {\n  timeout: 60000\n}).should('be.visible').and('contain', 'Task Dashboard');\ncy.log('✅ Task Dashboard loaded');\n// Step 2: Navigate to contract\n(0, _D1_AddVendorRatesGroups.d1_addvendorrates)(); // Assumes internal validation\ncy.log('✅ Vendor Rates added');\n// Step 3: Edit the vendor rate\n(0, _D1_EditVendorRatesGroups.d1_editvendorrates)(); // Assumes internal validation\ncy.log('✅ Vendor Rates edited successfully');\n// Step 4: Delete the vendor rate\n(0, _D1_DeleteVendorRatesGroups.d1_deletevendorrates)(); // Assumes internal validation\ncy.log('✅ Vendor Rates deleted successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<mat-option#mat-option-251.mat-mdc-option.mdc-list-item.ng-star-inserted>' to be 'visible'\n\nThis element `<mat-option#mat-option-251.mat-mdc-option.mdc-list-item.ng-star-inserted>` is not visible because its ancestor has `position: fixed` CSS property and it is overflowed by other elements. How about scrolling to the element with `cy.scrollIntoView()`?",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<mat-option#mat-option-251.mat-mdc-option.mdc-list-item.ng-star-inserted>' to be 'visible'\n\nThis element `<mat-option#mat-option-251.mat-mdc-option.mdc-list-item.ng-star-inserted>` is not visible because its ancestor has `position: fixed` CSS property and it is overflowed by other elements. How about scrolling to the element with `cy.scrollIntoView()`?\n    at d1_addvendorrates (webpack://cypressproject-1/./cypress/support/D1_AddVendorRatesGroups.js:39:39)\n    at Context.eval (webpack://cypressproject-1/./cypress/e2e/D1_VendorRates.cy.js:24:22)",
+                "diff": null
+              },
+              "uuid": "0aeb5b3c-ee60-446d-b522-3ac2db96b0c3",
+              "parentUUID": "bc5ea3e5-8aa3-4751-ad3a-9b37627fc3d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0aeb5b3c-ee60-446d-b522-3ac2db96b0c3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 33005,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

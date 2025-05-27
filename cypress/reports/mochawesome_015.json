@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-09T11:38:35.606Z",
+    "end": "2025-05-09T11:39:14.120Z",
+    "duration": 38514,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "25697a86-7874-4807-bc4c-8a5bfc6bd740",
+      "title": "",
+      "fullFile": "cypress\\e2e\\D1_TicketBulkUpload.cy.js",
+      "file": "cypress\\e2e\\D1_TicketBulkUpload.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3d4741de-d99c-44f1-b282-eb3f9005e6f0",
+          "title": "Bulk Upload D1 ticket",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should bulk upload tickets",
+              "fullTitle": "Bulk Upload D1 ticket should bulk upload tickets",
+              "timedOut": null,
+              "duration": 36808,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\n// Step 1: Perform login\n(0, _D1_LoginGroups.login)(_cypressEnv.default.email, _cypressEnv.default.password);\ncy.log('✅ Successfully logged in');\n// Wait until Task Dashboard loads\ncy.get(_cypressEnv.default.taskDashboardHeader, {\n  timeout: 60000\n}).should(\"be.visible\").and(\"contain\", \"Task Dashboard\");\n// Step 4: Add location\n(0, _D1_BulkUploadTicket.bulkupload_ticket)(); // Ensure this function correctly adds the location\ncy.log('✅ Tickets added');",
+              "err": {
+                "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `uploadStatus`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `uploadStatus`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:76205:18)\n    at Object.errByPath (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:76259:10)\n    at checkForXhr (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:137464:84)\n    at <unknown> (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:137490:28)\n    at tryCatcher (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:145846:68)\n    at <unknown> (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:145787:14)\n    at tryCatcher (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://core.dispatch1.com/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "7d57ff11-c06b-442c-89fc-e4e1b51c71ec",
+              "parentUUID": "3d4741de-d99c-44f1-b282-eb3f9005e6f0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7d57ff11-c06b-442c-89fc-e4e1b51c71ec"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 36808,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -31,6 +31,8 @@ describe('Add, Edit, Delete Vendor Rates', () => {
     // Step 4: Delete the vendor rate
     d1_deletevendorrates(); // Assumes internal validation
     cy.log('✅ Vendor Rates deleted successfully');
+
+    cy.reload(); // Reload the page to ensure all changes are applied
   });
 
 });
