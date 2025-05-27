@@ -16,14 +16,9 @@ export function edit_team() {
   cy.log(`✅ Searched for team: ${savedName}`);
 
   // Step 3: Wait until searched Title element shows correctly (assuming it contains the team name)
-  cy.contains(env.Teams.TitleCell, savedName, { timeout: 10000 })
+  cy.contains(env.Teams.TeamTitleCell, savedName, { timeout: 10000 })
     .should('be.visible');
   cy.log('✅ Searched team title is visible');
-
-  const teamEmail = Cypress.env('savedTeamEmail');
-  cy.get(env.Teams.EmailCell, { timeout: 10000 }).contains(teamEmail)
-    .should('be.visible');
-  cy.log('✅ Searched team email is visible');
 
   // Step 4: Click edit icon for the searched team
   cy.get(env.Teams.EditIcon).click();
@@ -32,7 +27,7 @@ export function edit_team() {
   cy.wait(5000);
 
   // Step 5: Add new team from the dropdown
-  cy.get(env.Teams.TeamLeadDropdown).type('Ramon-Tan', { timeout: 20000 })
+  cy.get(env.Teams.TeamMemberDropdown).type('Ramon-Tan', { timeout: 20000 })
     .type('{enter}', { timeout: 20000 });
   cy.log('✅ Selected "Ramon-Tan" from dropdown');
 

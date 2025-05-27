@@ -66,13 +66,13 @@ export function add_team() {
   cy.log(`✅ Searched for team: ${savedName}`);
 
   // Step 12: Wait until searched Title element shows correctly (assuming it contains the team name)
-  cy.contains(env.Teams.TitleCell, savedName, { timeout: 10000 })
+  cy.contains(env.Teams.TeamTitleCell, savedName, { timeout: 10000 })
     .should('be.visible');
   cy.log('✅ Searched team title is visible');
 
   // Step 13: Verify searched team email is visible
   const teamEmail = Cypress.env('savedTeamEmail');
-  cy.get(env.Teams.EmailCell, { timeout: 10000 }).contains(teamEmail)
+  cy.get(env.Teams.TeamEmailCell, { timeout: 10000 }).contains(teamEmail)
     .should('be.visible');
   cy.log('✅ Searched team email is visible');
 }
