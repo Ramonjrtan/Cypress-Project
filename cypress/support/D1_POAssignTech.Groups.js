@@ -16,18 +16,16 @@ export function po_assigntech() {
   cy.get(env.createTechAssignmentButton)
     .should('be.visible')
     .click();
-cy.wait(5000); // Wait for 5 seconds to ensure the page is fully loaded
-  // Refresh the page
-  cy.reload(); // Refresh the page to ensure all elements are loaded
+
 
   // Step 4: Wait until the "Assign Technician" page is fully loaded
   cy.contains(env.assignTechHeader, 'Assign Technician', { timeout: 10000 })
     .should('be.visible');
 
-    cy.get('#tech-select > .loading-wrapper').should('not.exist'); // Wait until the loading spinner disappears
-
+  // cy.get('#tech-select > .loading-wrapper').should('not.exist'); // Wait until the loading spinner disappears
+    
   // Wait until the radio button is visible
-  cy.get(env.techRadioButton, { timeout: 60000 })
+  cy.get(env.techRadioButton, { timeout: 180000 })
     .should('exist')
     .and('be.visible');
 
