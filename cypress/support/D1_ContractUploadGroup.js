@@ -3,7 +3,7 @@ import 'cypress-file-upload'; // Import the file upload plugin
 
 export function contract_upload() {
   // Step 1: Visit the contract document upload page URL
-  cy.visit('https://core.dispatch1.com/delivery/contract-detail/client/10001/contract/2706/documents');
+  cy.visit(env.contractDocument.contractDocumentsPage);
 
   // Step 2: Verify the page header contains 'Documents' and is visible
   cy.get(env.contractDocument.pageHeader)
