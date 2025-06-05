@@ -15,7 +15,7 @@ describe('Contract Document Upload', () => {
     login(env.email, env.password);
     cy.log('✅ Successfully logged in');
 
-    // Wait until Task Dashboard loads
+    // Step 2: Wait until Task Dashboard loads
     cy.get(env.taskDashboardHeader, { timeout: 60000 })
       .should("be.visible")
       .and("contain", "Task Dashboard");
