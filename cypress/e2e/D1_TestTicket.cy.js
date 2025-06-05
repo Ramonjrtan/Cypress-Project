@@ -15,6 +15,7 @@ import { po_activities } from '../support/D1_POActivitiesGroups';
 import { po_assigntech } from '../support/D1_POAssignTech.Groups';
 import { po_deliverables } from '../support/D1_PODeliverablesGroups';
 import { po_reviewtech } from '../support/D1_ReviewTechGroups';
+import { edit_po } from '../support/D1_EditPOGroup';
 
 //  Test block
 describe('Add ticket, update details, PO details, assign and review technician', () => {
@@ -56,29 +57,8 @@ describe('Add ticket, update details, PO details, assign and review technician',
     cy.log('✅ Schedule added');
 
     // Step 8: Click on Buy tab
-    cy.get(env.buyTabIcon)
-      .contains(env.buyTabText)
-      .should('be.visible')
-      .click();
-
-    // Step 9: Wait until the page loads completely
-    cy.contains(env.stagedLabel, 'Staged', { timeout: 10000 })
-      .should('be.visible');
-
-    // Step 10: Click on Edit PO button
-    cy.get(env.editPOIcon)
-      .contains('edit')
-      .first()
-      .click();
-
-    // Step 11: Ensure modal appears
-    cy.get(env.modalContainerLg, { timeout: 20000 })
-      .should('exist')
-      .and('be.visible');
-
-    // Step 12: Ensure modal header appears
-    cy.get(env.modalHeaderPO)
-      .should('contain', 'Edit PO/WO');
+    edit_po();
+    cy.log('✅ Buy tab clicked');
 
     // Step 13: Add PO Scope
     po_scope();

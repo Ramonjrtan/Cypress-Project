@@ -4,19 +4,19 @@ export function ticket_financials() {
   const expectedPrice = '$60.00';
   cy.reload(); // Refresh the page to ensure all elements are loaded
     // Step 6: Verify detail-level financials
-  cy.get('app-detail-node[title="Total Price"] div', { timeout: 60000 })
+  cy.get(env.ticketFinancials.TotalPrice, { timeout: 60000 })
     .invoke('text')
     .then((text) => {
       expect(text.trim()).to.eq(expectedPrice);
     });
 
-  cy.get('app-detail-node[title="Total Authorized Cost"] div')
+  cy.get(env.ticketFinancials.TotalAuthCost, { timeout: 60000 })
     .invoke('text')
     .then((text) => {
       expect(text.trim()).to.eq(expectedPrice);
     });
 
-cy.visit('https://core.dispatch1.com/delivery/contract-detail/client/10001/contract/2706/tickets');
+cy.visit(env.ticketFinancials.TicketsListURL);
 
 // Step 3: Get the search input field and clear if it's not empty
   cy.wait(5000);
@@ -47,13 +47,13 @@ cy.visit('https://core.dispatch1.com/delivery/contract-detail/client/10001/contr
 
 
   // Step 5: Verify table-level financials
-  cy.get(':nth-child(1) > [headers="table-header-0-8-1"]', { timeout: 60000 })
+  cy.get(env.ticketFinancials.TotalPriceHeader, { timeout: 60000 })
     .invoke('text')
     .then((text) => {
       expect(text.trim()).to.eq(expectedPrice);
     });
 
-  cy.get(':nth-child(1) > [headers="table-header-0-9-1"]')
+  cy.get(env.ticketFinancials.TotalAuthCostHeader, { timeout: 60000 })
     .invoke('text')
     .then((text) => {
       expect(text.trim()).to.eq(expectedPrice);
