@@ -5,6 +5,7 @@ import 'cypress-wait-until';
 //  Feature Support Functions (alphabetically)
 import { login } from '../support/D1_LoginGroups';
 import { d1_adddeal } from '../support/D1_AddDealGroups';          
+import { delete_deal } from '../support/D1_DeleteDealGroup';
 
 //  Test block
 describe('Add Deal', () => {
@@ -19,5 +20,9 @@ describe('Add Deal', () => {
         // Step 3: Add new Deal
         d1_adddeal();
        cy.log('✅ Deal added successfully');
+
+       // Step 4: Delete the Deal
+       delete_deal();
+       cy.log('✅ Deal deleted successfully');
     });
 });

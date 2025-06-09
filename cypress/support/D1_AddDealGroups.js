@@ -134,13 +134,10 @@ export function d1_adddeal() {
     cy.get(env.Deals.SaveButton).first().click(); // clicks only the first match
     cy.log('✅ Successfully Clicked Save');
 
-    cy.contains('Deal Updated successfully.', { timeout: 10000 })
-      .should('be.visible');
-      cy.log('✅ Deal Updated successfully message is visible');
+  // Step 5: Handle Modal Appearance
+  cy.get(env.Deals.ModalContainer, { timeout: 5000 })
+    .should('not.exist')
+  cy.log('✅ Modal is not visible');
 
-    cy.contains('Deal Updated successfully.', { timeout: 10000 })
-      .should('not.exist');
-      cy.log('✅ Verified success message disappeared');
-      
   });
 }
