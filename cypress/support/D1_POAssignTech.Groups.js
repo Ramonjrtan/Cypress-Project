@@ -23,6 +23,9 @@ export function po_assigntech() {
     .should('be.visible');
 
   // cy.get('#tech-select > .loading-wrapper').should('not.exist'); // Wait until the loading spinner disappears
+  //Switch to Manual Tech Search
+  cy.get('button[id="mat-mdc-slide-toggle-1-button"] span.mdc-switch__track').click({ force: true });
+
     
   // Wait until the radio button is visible
   cy.get(env.techRadioButton, { timeout: 180000 })

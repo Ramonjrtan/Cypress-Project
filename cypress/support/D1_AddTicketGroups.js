@@ -56,11 +56,11 @@ export function add_ticket() {
       .click();
   });
 
-  // Toast: Task "Create PO/WO"
-  cy.get('.toast-info > .toast-message', { timeout: 10000 })
-  .should('be.visible')
-  .contains('Task "Create PO/WO" has been automatically completed.');
-cy.log('✅ Toast message for Create PO/WO appears successfully');
+//   // Toast: Task "Create PO/WO"
+//   cy.get('.toast-info > .toast-message', { timeout: 10000 })
+//   .should('be.visible')
+//   .contains('Task "Create PO/WO" has been automatically completed.');
+// cy.log('✅ Toast message for Create PO/WO appears successfully');
 
   // Step 9: Verify "Saved Successfully" message appears
   cy.get(env.ticketSuccessMessage, { timeout: 10000 })

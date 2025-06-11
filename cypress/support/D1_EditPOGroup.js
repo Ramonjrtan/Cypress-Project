@@ -2,6 +2,8 @@ import env from '../../cypress.env.json';
 
 export function edit_po() {
   // Step 1: Click on the Buy tab
+  cy.wait(3000); // Wait for the page to load
+  
   cy.get(env.buyTabIcon)
     .should('be.visible')
     .contains(env.buyTabText)

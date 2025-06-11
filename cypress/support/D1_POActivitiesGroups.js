@@ -12,8 +12,12 @@ export function po_activities() {
   cy.wait('@getActivities', { timeout: 30000 });
 
   // Step 3: Wait for the activity row to exist
-  cy.get(env.poActivityRow, { timeout: 15000 })
-    .should('exist')
+  // cy.get(env.poActivityRow, { timeout: 15000 })
+  //   .should('exist')
+  //   .as('activityRow');
+
+    cy.get('.table > tbody > tr.ng-star-inserted > :nth-child(2)')
+        .should('exist')
     .as('activityRow');
 
   // Step 4: Click the activity row

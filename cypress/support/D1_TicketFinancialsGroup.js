@@ -30,7 +30,7 @@ cy.visit(env.ticketFinancials.TicketsListURL);
     .type('Cypress Test Ticket');
 
   // Step 4: Wait for search results to appear dynamically
-  cy.get(env.editTicket.Row, { timeout: 100000 }).should('have.length.greaterThan', 0);
+  cy.get(env.editTicket.Row, { timeout: 5000 }).should('have.length.greaterThan', 0);
 
   // Step 5: Click on the first search result safely
   cy.intercept('GET', '**/tickets?*').as('fetchTickets');
@@ -39,9 +39,9 @@ cy.visit(env.ticketFinancials.TicketsListURL);
   cy.get(env.editTicket.Row)
     .should('have.length.above', 0);
 
-  cy.wait(10000);
+  // cy.wait(10000);
 
-  cy.get(env.editTicket.Row).first()
+  cy.get(env.editTicket.Row, { timeout: 5000 }).first()
     .find(env.editTicket.Link)
     .should('be.visible');
 

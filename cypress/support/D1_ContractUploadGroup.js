@@ -56,6 +56,12 @@ export function contract_upload() {
     .click();
 
   // Step 11: Verify the modal closes, indicating upload completion
-  cy.get('.cds--modal').should('not.exist');
+  cy.get(env.contractDocument.modalContainer).should('not.exist');
   cy.log('✅ Document upload completed');
+
+  // Step 12: Verify the document appears in the list with correct details
+  cy.get('input[placeholder="Search"]').type('Test Document Name');
+ cy.get('[headers="table-header-0-0-1"]').should('contain', 'Test Document Name.xlsb');
+
+ cy.wait(3000);
 }

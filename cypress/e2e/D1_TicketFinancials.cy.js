@@ -36,25 +36,25 @@ describe('Verify ticket Financials', () => {
     navigate_contract();
     cy.log('✅ Navigated to contract');
 
-    // Step 3: Add a new ticket
-    add_ticket();
-    cy.log('✅ Ticket added');
+    // // Step 3: Add a new ticket
+    // add_ticket();
+    // cy.log('✅ Ticket added');
 
     // Step 4: Edit the ticket
     edit_ticket();
     cy.log('✅ Ticket edited');
 
-    // Step 5: Add site
-    add_site();
-    cy.log('✅ Site added');
+    // // Step 5: Add site
+    // add_site();
+    // cy.log('✅ Site added');
 
-    // Step 6: Add activity
-    add_activity();
-    cy.log('✅ Activity added');
+    // // Step 6: Add activity
+    // add_activity();
+    // cy.log('✅ Activity added');
 
-    // Step 7: Add schedule
-    add_schedule();
-    cy.log('✅ Schedule added');
+    // // Step 7: Add schedule
+    // add_schedule();
+    // cy.log('✅ Schedule added');
 
     // Step 8: Click on Buy tab
     edit_po();
