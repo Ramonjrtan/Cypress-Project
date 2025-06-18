@@ -9,7 +9,7 @@ import { delete_deal } from '../support/D1_DeleteDealGroup';
 
 //  Test block
 describe('Add Delete Deal', () => {
-    it('should add and delete a Deal', () => {
+    it('should add delete a Deal', () => {
         cy.viewport(1920, 1080);
         cy.log('✅ Viewport set to 1920x1080');
         
