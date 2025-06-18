@@ -24,5 +24,8 @@ describe('Add Delete Deal', () => {
        // Step 3: Delete the Deal
        delete_deal();
        cy.log('✅ Deal deleted successfully');
+
+       // Step 4: Verify Deal deletion scripts here
+       
     });
 });
