@@ -1,7 +1,7 @@
 //  Cypress & Environment
 import env from '../../cypress.env.json';
 
-//  Feature Support Functions (alphabetically)
+//  Feature Support Functions
 import { login } from "../support/D1_LoginGroups";
 import { d1_addvendorrates } from "../support/D1_AddVendorRatesGroups";
 import { d1_editvendorrates } from "../support/D1_EditVendorRatesGroups";

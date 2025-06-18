@@ -2,7 +2,7 @@
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-//  Feature Support Functions (alphabetically)
+//  Feature Support Functions
 import { add_activity } from '../support/D1_AddActivityGroups';
 import { add_schedule } from '../support/D1_AddScheduleGroups';
 import { add_site } from '../support/D1_AddSiteGroups';

@@ -2,7 +2,7 @@
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-//  Feature Support Functions (alphabetically)
+//  Feature Support Functions
 import { login } from '../support/D1_LoginGroups';
 import { contract_upload } from '../support/D1_ContractUploadGroup';
 

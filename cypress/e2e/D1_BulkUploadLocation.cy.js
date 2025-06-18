@@ -1,7 +1,7 @@
 //  Cypress & Environment
 import env from '../../cypress.env.json';
 
-//  Feature Support Functions (alphabetically)
+//  Feature Support Functions
 import { d1_bulkuploadlocaton } from "../support/D1_BulkUploadLocation";
 import { login } from "../support/D1_LoginGroups";
 

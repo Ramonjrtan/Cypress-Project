@@ -2,7 +2,7 @@
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-//  Feature Support Functions (alphabetically)
+//  Feature Support Functions
 import { cp_addclientlocation } from '../support/CP_AddClientLocationGroups';
 import { cp_editdeletelocation } from '../support/CP_EditDeleteLocationGroups';
 import { cp_login } from '../support/CP_LoginGroups';

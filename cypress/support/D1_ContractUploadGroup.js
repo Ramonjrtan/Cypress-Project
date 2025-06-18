@@ -1,3 +1,4 @@
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 import 'cypress-file-upload'; // Import the file upload plugin
 

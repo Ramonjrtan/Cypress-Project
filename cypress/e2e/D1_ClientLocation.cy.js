@@ -1,7 +1,7 @@
 //  Cypress & Environment
 import env from '../../cypress.env.json';
 
-//  Feature Support Functions (alphabetically)
+//  Feature Support Functions
 import { d1_addlocation } from '../support/D1_AddLocationGroups';
 import { d1_deletelocation } from '../support/D1_DeleteLocationGroups';
 import { d1_editlocation } from '../support/D1_EditLocationGroups';

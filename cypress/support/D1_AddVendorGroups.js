@@ -1,3 +1,4 @@
+//  Cypress & Environment
 import env from '../../cypress.env.json';
 
 export function d1_addvendor() {

@@ -2,7 +2,7 @@
 import 'cypress-wait-until';
 import env from '../../cypress.env.json';
 
-//  Feature Support Functions (alphabetically)
+//  Feature Support Functions
 import { cp_login } from '../support/CP_LoginGroups';
 import { cp_ticketbulkupload } from '../support/CP_TicketBulkUploadGroups';
 

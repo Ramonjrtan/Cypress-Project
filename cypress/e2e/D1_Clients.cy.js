@@ -2,7 +2,7 @@
 import env from '../../cypress.env.json';
 import { login } from "../support/D1_LoginGroups";
 
-//  Feature Support Functions (alphabetically)
+//  Feature Support Functions
 import { d1_addclient } from "../support/D1_AddClientGroups";
 import { d1_deleteclient } from "../support/D1_DeleteClientGroups";
 import { d1_editclient } from "../support/D1_EditClientGroups";

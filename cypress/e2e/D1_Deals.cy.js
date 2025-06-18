@@ -2,14 +2,14 @@
 import env from '../../cypress.env.json';
 import 'cypress-wait-until';
 
-//  Feature Support Functions (alphabetically)
+//  Feature Support Functions
 import { login } from '../support/D1_LoginGroups';
 import { d1_adddeal } from '../support/D1_AddDealGroups';          
 import { delete_deal } from '../support/D1_DeleteDealGroup';
 
 //  Test block
-describe('Add Deal', () => {
-    it('should add a Deal', () => {
+describe('Add Delete Deal', () => {
+    it('should add and delete a Deal', () => {
         cy.viewport(1920, 1080);
         cy.log('✅ Viewport set to 1920x1080');
         
