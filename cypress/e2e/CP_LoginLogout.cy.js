@@ -20,7 +20,7 @@ describe('Client Portal Login and Logout ', () => {
     cy.get(env.clientPortal.Dashboard, { timeout: 50000 }).should('be.visible');
     cy.log('✅ Dashboard is visible');
 
-    // Step 3: Create a new ticket
+    // Step 3: Logout from Client Portal
     cy.get('.name').should('be.visible').click();
     cy.contains('Logout').should('be.visible').click();
     cy.wait(3000);
