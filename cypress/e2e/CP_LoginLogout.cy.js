@@ -6,8 +6,8 @@ import 'cypress-wait-until';
 import { cp_login } from '../support/CP_LoginGroups';
 
 //  Test block
-describe('Visit different origins', () => {
-  it('should login and work across multiple origins', () => {
+describe('Client Portal Login and Logout ', () => {
+  it('should login and logout in Client Portal', () => {
     cy.viewport(1920, 1080);
 
     const { email, password } = env;

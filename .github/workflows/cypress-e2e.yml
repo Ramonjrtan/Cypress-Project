@@ -22,4 +22,4 @@ jobs:
         run: npx cypress verify
 
       - name: Run Cypress tests
-        run: npx cypress run --spec "cypress/e2e/D1_CPTicketEmail.cy.js"
+        run: npx cypress run --spec "cypress/e2e/CP_LoginLogout.cy.js"
