@@ -17,11 +17,11 @@ describe('Add Delete Deal', () => {
         login(env.email, env.password);
         cy.log('✅ Successfully logged in');
                
-        // Step 3: Add new Deal
+        // Step 2: Add new Deal
         d1_adddeal();
        cy.log('✅ Deal added successfully');
 
-       // Step 4: Delete the Deal
+       // Step 3: Delete the Deal
        delete_deal();
        cy.log('✅ Deal deleted successfully');
     });
