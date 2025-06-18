@@ -73,8 +73,8 @@ describe('Visit different origins', () => {
     // Step 12: Navigate to contract page
     cy.origin('https://core.dispatch1.com', {
       args: {
-        contractDetailsPage: env.contractDetailsPage,
-        contractHeader: env.contractHeader
+        contractDetailsPage: env.contract.DetailsPage,
+        contractHeader: env.contract.Header
       }
     }, ({ contractDetailsPage, contractHeader }) => {
       cy.visit(contractDetailsPage);
@@ -89,11 +89,11 @@ describe('Visit different origins', () => {
 
     cy.origin('https://core.dispatch1.com', {
       args: {
-        ticketTabButton: env.ticketTabButton,
-        ticketTabHeader: env.ticketTabHeader,
-        ticketRow: env.ticketRow,
-        ticketSearchInput: env.ticketSearchInput,
-        ticketDetailsHeader: env.ticketDetailsHeader,
+        ticketTabButton: env.editTicket.TabButton,
+        ticketTabHeader: env.editTicket.TabHeader,
+        ticketRow: env.editTicket.Row,
+        ticketSearchInput: env.editTicket.SearchInput,
+        ticketDetailsHeader: env.editTicket.DetailsHeader,
         buyTabIcon: env.buyTabIcon,
         ticketEmailLabel: env.ticketEmailLabel,
       }
